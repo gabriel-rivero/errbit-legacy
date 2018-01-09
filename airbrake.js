@@ -101,7 +101,7 @@ module.exports = class Airbrake {
   }
 
   notify(message) {
-    return this.sendMessage(this.createXml(message));
+    return this.sendMessage(this.createXml(message)).catch(err => console.log(`error posting to errbit`));
   }
 
 };
